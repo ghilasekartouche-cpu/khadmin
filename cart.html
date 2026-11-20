@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سلة المشتريات — ماي مون جيجل</title>
+  <meta name="description" content="راجعي سلعتك، المقاسات، والكمية في سلة مشتريات بوتيك ماي مون جيجل قبل تأكيد الطلبية.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body class="bg-[#09090b] text-[#fafafa] min-h-screen flex flex-col selection:bg-amber-400 selection:text-black">
+
+  <!-- 1. شريط الإعلانات العلوي -->
+  <div class="announcement-bar py-2.5 px-4 text-xs font-medium flex items-center justify-between">
+    <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-4 text-center sm:text-right">
+      <div class="flex items-center gap-2 mx-auto sm:mx-0">
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-bold">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+          <span>جديد الحطة ✨</span>
+        </span>
+        <span class="text-zinc-600 hidden sm:inline">|</span>
+        <span class="text-zinc-200 font-arabic text-[13px]" data-announcement-text>
+          التوصيل متوفر لـ 58 ولاية 🚚 | خلّص كي يلحقك المنتوج لباب الدار
+        </span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-xs text-zinc-400">
+        <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="flex items-center gap-1.5 text-emerald-400 font-bold">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span dir="ltr" data-store-phone>0656 481 332</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. الهيدر الرئيسي -->
+  <header class="sticky-header sticky top-0 z-40 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center text-black font-black text-xl shadow-md group-hover:scale-105 transition duration-200">
+          <i data-lucide="sparkles" class="w-6 h-6 text-black"></i>
+        </div>
+        <div>
+          <span class="font-heading text-xl sm:text-2xl font-black text-white group-hover:text-amber-400 transition" data-store-name>ماي مون جيجل</span>
+          <span class="block text-[11px] text-zinc-400 font-medium" data-store-tagline>أرقى الملابس النسائية العصرية</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-zinc-300">
+        <a href="index.html" class="hover:text-amber-400 transition">الرئيسية</a>
+        <a href="catalog.html" class="hover:text-amber-400 transition font-bold">كل السلعة</a>
+        <a href="locations.html" class="hover:text-amber-400 transition">التوصيل لـ 58 ولاية</a>
+        <a href="order-tracking.html" class="hover:text-amber-400 transition flex items-center gap-1.5 text-xs bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-full text-zinc-300 hover:border-zinc-700">
+          <i data-lucide="package-search" class="w-3.5 h-3.5 text-amber-400"></i> تتبع لاكوموند
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold hover:bg-emerald-500/20 transition">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>واتساب مباشر ⚡</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. محتوى صفحة السلة -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full text-right">
+    
+    <div class="mb-8">
+      <h1 class="text-2xl sm:text-4xl font-black text-white flex items-center gap-3 font-heading">
+        <span>سلة المشتريات 🛍️</span>
+        <span id="cart-total-badge" class="badge-tag badge-trend text-xs font-bold">0 قطع</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-zinc-400 mt-1">
+        تأكدي من المقاس والكمية قبل التوجه لتحديد ولايتك وتأكيد الطلب والدفع عند الاستلام.
+      </p>
+    </div>
+
+    <!-- شريط التوصيل المجاني -->
+    <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 mb-8 flex items-center justify-between text-xs">
+      <div class="flex items-center gap-2 text-zinc-300">
+        <i data-lucide="truck" class="w-4 h-4 text-amber-400"></i>
+        <span>التوصيل باطل لجميع الولايات للطلبيات ابتداءً من <strong>12,000 دج</strong></span>
+      </div>
+      <span class="text-amber-400 font-bold hidden sm:inline">الدفع عند الاستلام 💵</span>
+    </div>
+
+    <!-- شبكة السلة -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- قائمة عناصر السلة -->
+      <div class="lg:col-span-8 space-y-4">
+        <div id="cart-items-table" class="space-y-3">
+          <!-- يتم ملؤها عبر JavaScript -->
+        </div>
+
+        <div id="empty-cart-view" class="hidden text-center py-16 bg-zinc-900/60 rounded-2xl border border-zinc-800 p-8 space-y-3">
+          <i data-lucide="shopping-bag" class="w-16 h-16 mx-auto text-zinc-600 stroke-1"></i>
+          <h3 class="text-lg font-bold text-white font-heading">سلة المشتريات تاعك فارغة</h3>
+          <p class="text-xs text-zinc-400 max-w-sm mx-auto">تصفحي تشكيلة الفساتين والأطقم واختاري الحطة اللي تعجبك.</p>
+          <a href="catalog.html" class="btn-primary py-2.5 px-6 text-xs font-bold inline-block mt-3">
+            تصفحي الكاتالوج دروك 🛍️
+          </a>
+        </div>
+      </div>
+
+      <!-- ملخص الحساب -->
+      <div class="lg:col-span-4">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-5 sticky top-28 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-zinc-800 pb-3 font-heading">
+            ملخص الحساب
+          </h3>
+
+          <div class="space-y-3 text-xs text-zinc-400">
+            <div class="flex justify-between">
+              <span>المجموع الفرعي:</span>
+              <strong id="summary-subtotal" class="text-white text-sm">0 دج</strong>
+            </div>
+            <div class="flex justify-between">
+              <span>مصاريف التوصيل:</span>
+              <span class="text-amber-400">تُحسب في الخطوة الموالية حسب الولاية</span>
+            </div>
+            <div class="flex justify-between">
+              <span>طريقة الدفع:</span>
+              <span class="text-white">الدفع عند الاستلام (خلّص كي يلحقك)</span>
+            </div>
+          </div>
+
+          <div class="border-t border-zinc-800 pt-4 flex justify-between items-baseline">
+            <span class="text-sm font-bold text-white">المجموع الإجمالي:</span>
+            <span id="summary-total" class="text-2xl font-black text-amber-400">0 دج</span>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <a href="checkout.html" class="btn-primary w-full py-3.5 text-center text-sm font-bold shadow-lg">
+              <span>تأكيد الطلب وعنوان التوصيل ⚡</span>
+            </a>
+            <button onclick="clearEntireCart()" class="btn-secondary w-full py-2.5 text-center text-xs text-zinc-400 hover:text-red-400">
+              تفريغ السلة
+            </button>
+          </div>
+
+          <div class="p-3 bg-zinc-950/70 border border-zinc-800 rounded-xl text-[11px] text-zinc-400 space-y-1">
+            <p>✅ التوصيل مضمون لـ 58 ولاية حتى لباب دارك.</p>
+            <p>✅ تبديل المقاس مجاني وبدون أي تعقيد.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 4. الفوتر -->
+  <footer class="bg-[#0c0c0e] border-t border-zinc-800 text-zinc-400 mt-auto pt-8 pb-6 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 <span data-store-name>ماي مون جيجل</span>. جميع الحقوق محفوظة.
+      </div>
+      <div class="flex items-center gap-4">
+        <span>التوصيل لـ 58 ولاية 🚚</span>
+        <span>•</span>
+        <span>الدفع عند الاستلام 💵</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="store-config.js"></script>
+
+  <script>
+    lucide.createIcons();
+
+    function renderCartPage() {
+      const container = document.getElementById('cart-items-table');
+      const emptyView = document.getElementById('empty-cart-view');
+      const badge = document.getElementById('cart-total-badge');
+      const subtotalEl = document.getElementById('summary-subtotal');
+      const totalEl = document.getElementById('summary-total');
+
+      if (!window.cartEngine) return;
+
+      const cart = window.cartEngine.getCart();
+      const count = cart.reduce((sum, i) => sum + i.quantity, 0);
+      badge.textContent = `${count} قطع`;
+
+      if (cart.length === 0) {
+        container.innerHTML = '';
+        emptyView.classList.remove('hidden');
+        subtotalEl.textContent = `0 ${STORE_CONFIG.currency}`;
+        totalEl.textContent = `0 ${STORE_CONFIG.currency}`;
+        lucide.createIcons();
+        return;
+      }
+
+      emptyView.classList.add('hidden');
+
+      container.innerHTML = cart.map((item, index) => `
+        <div class="p-4 bg-zinc-900 border border-zinc-800 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-24 rounded-xl bg-zinc-800 shrink-0 overflow-hidden">
+              ${renderProductImage(item.image, item.name)}
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm font-bold text-white">${item.name}</h3>
+              <div class="text-xs text-zinc-400 space-x-2 space-x-reverse">
+                <span>لاطاي: <strong class="text-white">${item.size}</strong></span>
+                <span>•</span>
+                <span>اللون: <strong class="text-white">${item.color}</strong></span>
+              </div>
+              <div class="text-sm font-bold text-amber-400 pt-1">
+                ${(item.price * item.quantity).toLocaleString()} ${STORE_CONFIG.currency}
+                <span class="text-[11px] text-zinc-500 font-normal">(${item.price.toLocaleString()} دج للقطعة)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 self-end sm:self-center">
+            <div class="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded-lg p-1">
+              <button onclick="updateQty(${index}, ${item.quantity - 1})" class="w-6 h-6 rounded bg-zinc-800 text-zinc-300 flex items-center justify-center text-xs hover:bg-zinc-700">-</button>
+              <span class="text-xs font-bold text-white px-2">${item.quantity}</span>
+              <button onclick="updateQty(${index}, ${item.quantity + 1})" class="w-6 h-6 rounded bg-zinc-800 text-zinc-300 flex items-center justify-center text-xs hover:bg-zinc-700">+</button>
+            </div>
+            <button onclick="removeItem(${index})" class="text-xs text-red-400 hover:text-red-300 p-2 hover:bg-zinc-800 rounded-lg transition" title="حذف المنتوج">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+        </div>
+      `).join('');
+
+      const subtotal = window.cartEngine.getSubtotal();
+      subtotalEl.textContent = `${subtotal.toLocaleString()} ${STORE_CONFIG.currency}`;
+      totalEl.textContent = `${subtotal.toLocaleString()} ${STORE_CONFIG.currency}`;
+      lucide.createIcons();
+    }
+
+    function updateQty(index, qty) {
+      window.cartEngine.updateQuantity(index, qty);
+      renderCartPage();
+    }
+
+    function removeItem(index) {
+      window.cartEngine.removeFromCart(index);
+      renderCartPage();
+    }
+
+    function clearEntireCart() {
+      if (confirm("هل أنتِ متأكدة من رغبتكِ في تفريغ سلة المشتريات بالكامل؟")) {
+        window.cartEngine.clearCart();
+        renderCartPage();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+    });
+  </script>
+
+</body>
+</html>

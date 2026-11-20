@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ماي مون جيجل — أرقى الملابس النسائية العصرية</title>
+  <meta name="description" content="ماي مون جيجل — أرقى الملابس النسائية العصرية بجودة عالية وأسعار في المتناول. التوصيل متوفر لـ 58 ولاية والدفع عند الاستلام.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body class="bg-[#09090b] text-[#fafafa] min-h-screen flex flex-col selection:bg-amber-400 selection:text-black">
+
+  <!-- 1. شريط الإعلانات العلوي بالدارجة الجزائرية -->
+  <div class="announcement-bar py-2.5 px-4 text-xs font-medium flex items-center justify-between">
+    <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-4 text-center sm:text-right">
+      <div class="flex items-center gap-2 mx-auto sm:mx-0">
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-bold">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+          <span>جديد الحطة ✨</span>
+        </span>
+        <span class="text-zinc-600 hidden sm:inline">|</span>
+        <span class="text-zinc-200 font-arabic text-[13px]" data-announcement-text>
+          التوصيل متوفر لـ 58 ولاية 🚚 | خلّص كي يلحقك المنتوج لباب الدار
+        </span>
+      </div>
+
+      <!-- معلومات سريعة في الشريط العلوي -->
+      <div class="hidden md:flex items-center gap-6 text-xs text-zinc-400">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>المحل: <strong class="text-zinc-200" data-store-wilaya>جيجل</strong></span>
+        </span>
+        <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-bold transition">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          <span dir="ltr" data-store-phone>0656 481 332</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. الهيدر الرئيسي للمتجر -->
+  <header class="sticky-header sticky top-0 z-40 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- اسم وشعار المتجر -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center text-black font-black text-xl shadow-md group-hover:scale-105 transition duration-200">
+          <i data-lucide="sparkles" class="w-6 h-6 text-black"></i>
+        </div>
+        <div>
+          <span class="font-heading text-xl sm:text-2xl font-black text-white group-hover:text-amber-400 transition" data-store-name>ماي مون جيجل</span>
+          <span class="block text-[11px] text-zinc-400 font-medium" data-store-tagline>أرقى الملابس النسائية العصرية</span>
+        </div>
+      </a>
+
+      <!-- روابط القائمة الرئيسية -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-zinc-300">
+        <a href="index.html" class="text-amber-400 font-bold border-b-2 border-amber-400 pb-1">الرئيسية</a>
+        <a href="catalog.html" class="hover:text-amber-400 transition">كل السلعة</a>
+        <a href="catalog.html?cat=فساتين" class="hover:text-amber-400 transition">فساتين</a>
+        <a href="catalog.html?cat=أطقم شابة" class="hover:text-amber-400 transition">أطقم شابة</a>
+        <a href="catalog.html?cat=عبايات حطة" class="hover:text-amber-400 transition">عبايات حطة</a>
+        <a href="locations.html" class="hover:text-amber-400 transition">التوصيل لـ 58 ولاية</a>
+        <a href="order-tracking.html" class="hover:text-amber-400 transition flex items-center gap-1.5 text-xs bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-full text-zinc-300 hover:border-zinc-700">
+          <i data-lucide="package-search" class="w-3.5 h-3.5 text-amber-400"></i> تتبع لاكوموند
+        </a>
+      </nav>
+
+      <!-- أزرار الإجراءات السريعة -->
+      <div class="flex items-center gap-3">
+        <!-- زر واتساب مباشر -->
+        <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold hover:bg-emerald-500/20 transition">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>واتساب مباشر ⚡</span>
+        </a>
+
+        <!-- زر السلة -->
+        <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 transition group" aria-label="فتح السلة">
+          <i data-lucide="shopping-bag" class="w-5 h-5 group-hover:text-amber-400 transition"></i>
+          <span data-cart-count class="absolute -top-1.5 -left-1.5 w-5 h-5 rounded-full bg-amber-500 text-black text-xs font-black flex items-center justify-center hidden">0</span>
+        </button>
+
+        <!-- زر القائمة للهواتف -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- قائمة الهاتف المحمول -->
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-zinc-800 bg-[#121215] px-6 py-5 space-y-3">
+      <a href="index.html" class="block text-sm font-bold text-amber-400 border-r-2 border-amber-400 pr-3">الرئيسية</a>
+      <a href="catalog.html" class="block text-sm text-zinc-300 hover:text-white pr-3">كل السلعة (الكاتالوج)</a>
+      <a href="catalog.html?cat=فساتين" class="block text-sm text-zinc-300 hover:text-white pr-3">فساتين</a>
+      <a href="catalog.html?cat=أطقم شابة" class="block text-sm text-zinc-300 hover:text-white pr-3">أطقم شابة</a>
+      <a href="catalog.html?cat=عبايات حطة" class="block text-sm text-zinc-300 hover:text-white pr-3">عبايات حطة</a>
+      <a href="catalog.html?cat=أكسسوارات" class="block text-sm text-zinc-300 hover:text-white pr-3">أكسسوارات</a>
+      <a href="locations.html" class="block text-sm text-zinc-300 hover:text-white pr-3">أسعار التوصيل لـ 58 ولاية</a>
+      <a href="order-tracking.html" class="block text-sm text-zinc-300 hover:text-white pr-3">تتبع لاكوموند تاعك</a>
+      <div class="pt-3 border-t border-zinc-800">
+        <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="btn-whatsapp w-full py-2.5 px-4 rounded-xl text-xs font-bold">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>تواصل واتساب مباشر (0656 481 332)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. واجهة الهيرو الرئيسية (تصميم 2D مسطح وسريع جداً بدون 3D) -->
+  <section class="relative py-12 lg:py-20 border-b border-zinc-800 bg-gradient-to-b from-[#121215] to-[#09090b]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- النصوص الترويجية بالدارجة الجزائرية -->
+      <div class="lg:col-span-7 space-y-6 text-right">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-xs font-bold text-amber-400">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span>تشكيلة حصرية 2026 // متوفرة دروك</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white font-heading">
+          أناقتكِ تبدأ من هنا ✨<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-l from-amber-300 to-amber-500">
+            أرقى ملابس الحطة في الجزائر
+          </span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-zinc-400 max-w-xl leading-relaxed">
+          أرقى الملابس العصرية بجودة عالية وسومة في المتناول، من جيجل حتى لباب دارك. فساتين سهرة، أطقم كلاسيك شابة، عبايات مطرزة، وسلعة كلاص تليق بيك.
+        </p>
+
+        <!-- أزرار الإجراء -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="catalog.html" class="btn-primary text-sm sm:text-base py-3 px-6">
+            <span>شوف كل السلعة 🛍️</span>
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </a>
+          <button onclick="openQuickOrderForFirstProduct()" class="btn-secondary text-sm sm:text-base py-3 px-5">
+            <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+            <span>كوموندي دروك ⚡</span>
+          </button>
+        </div>
+
+        <!-- مميزات سريعة تحت الهيرو -->
+        <div class="pt-6 border-t border-zinc-800 grid grid-cols-3 gap-3 text-right">
+          <div class="p-3 bg-zinc-900/70 rounded-xl border border-zinc-800">
+            <div class="text-white font-bold text-xs sm:text-sm flex items-center gap-1.5">
+              <i data-lucide="truck" class="w-4 h-4 text-amber-400 shrink-0"></i> 58 ولاية
+            </div>
+            <div class="text-[11px] text-zinc-500 mt-0.5">توصيل حتى لباب الدار</div>
+          </div>
+          <div class="p-3 bg-zinc-900/70 rounded-xl border border-zinc-800">
+            <div class="text-white font-bold text-xs sm:text-sm flex items-center gap-1.5">
+              <i data-lucide="banknote" class="w-4 h-4 text-amber-400 shrink-0"></i> الدفع عند الاستلام
+            </div>
+            <div class="text-[11px] text-zinc-500 mt-0.5">خلّص كي تقلب سلعتك</div>
+          </div>
+          <div class="p-3 bg-zinc-900/70 rounded-xl border border-zinc-800">
+            <div class="text-white font-bold text-xs sm:text-sm flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> جودة مضمونة
+            </div>
+            <div class="text-[11px] text-zinc-500 mt-0.5">تبديل مجاني للمقاس</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- إطار صورة واجهة الهيرو (الأبعاد محفوظة 100% بدون صور وبدون 3D) -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        <div class="w-full aspect-[4/5] sm:h-[480px] rounded-2xl bg-zinc-900/80 border border-zinc-800 p-4 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-2xl">
+          <div class="product-placeholder-frame w-full h-full flex flex-col items-center justify-center p-6 bg-zinc-950/70 border border-dashed border-zinc-800 rounded-xl">
+            <div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-700/60 flex items-center justify-center text-amber-400 mb-3 shadow-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <span class="text-sm font-bold text-zinc-300 font-arabic">مكان صورة الواجهة الرئيسية</span>
+            <span class="text-xs text-zinc-500 font-arabic mt-1">حط رابط الصورة في الإعدادات وراح تظهر مباشرة بـ object-cover</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. شريط الثقة بالدارجة الجزائرية 100% -->
+  <section class="border-b border-zinc-800 bg-[#0d0d10] py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <div class="trust-badge-card">
+          <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0">
+            <i data-lucide="hand-coins" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm font-arabic">الدفع عند الاستلام 💵</h4>
+            <p class="text-xs text-zinc-400 mt-0.5">ما تخلّص حتى دينار حتى يوصلك الكولي وتقلب سلعتك مليح.</p>
+          </div>
+        </div>
+
+        <div class="trust-badge-card">
+          <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm font-arabic">سلعة مضمونة وفينيسيون طوب ✨</h4>
+            <p class="text-xs text-zinc-400 mt-0.5">أقمشة مختارة بعناية وخياطة متقونة 100% كيما فالصورة.</p>
+          </div>
+        </div>
+
+        <div class="trust-badge-card">
+          <div class="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shrink-0">
+            <i data-lucide="repeat" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm font-arabic">التبديل ساهل وبسيط 🔄</h4>
+            <p class="text-xs text-zinc-400 mt-0.5">إيلا ما جاتكش لاطاي ولا حبيت تبدل اللون نبدلوهالك بكل فرح.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. أصناف السلعة (أطقم شابة / عبايات حطة / فساتين / أكسسوارات) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+      <div>
+        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">تشكيلة المحل</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white mt-1 font-heading">أقسام السلعة المتوفرة</h2>
+      </div>
+      <a href="catalog.html" class="text-xs sm:text-sm font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 transition">
+        <span>شوف كل الموديلات</span>
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- صنف: فساتين -->
+      <a href="catalog.html?cat=فساتين" class="ecom-card group p-5 flex flex-col justify-between min-h-[190px]">
+        <div>
+          <span class="text-xs text-zinc-500 font-bold">01 //</span>
+          <h3 class="text-lg sm:text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition font-heading">فساتين</h3>
+          <p class="text-xs text-zinc-400 mt-1.5 leading-relaxed">فساتين سهرة، شيفون، وساتان حريري للمناسبات والحفلات.</p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-800 text-xs text-zinc-400">
+          <span>كل المقاسات: S إلى XL</span>
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition"></i>
+        </div>
+      </a>
+
+      <!-- صنف: أطقم شابة -->
+      <a href="catalog.html?cat=أطقم شابة" class="ecom-card group p-5 flex flex-col justify-between min-h-[190px]">
+        <div>
+          <span class="text-xs text-zinc-500 font-bold">02 //</span>
+          <h3 class="text-lg sm:text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition font-heading">أطقم شابة</h3>
+          <p class="text-xs text-zinc-400 mt-1.5 leading-relaxed">أطقم قطعتين كريب وكتان وبليزرات كلاسيك للخرجات والخدمة.</p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-800 text-xs text-zinc-400">
+          <span>جديد الحطة</span>
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition"></i>
+        </div>
+      </a>
+
+      <!-- صنف: عبايات حطة -->
+      <a href="catalog.html?cat=عبايات حطة" class="ecom-card group p-5 flex flex-col justify-between min-h-[190px]">
+        <div>
+          <span class="text-xs text-zinc-500 font-bold">03 //</span>
+          <h3 class="text-lg sm:text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition font-heading">عبايات حطة</h3>
+          <p class="text-xs text-zinc-400 mt-1.5 leading-relaxed">عبايات كيمونو عصرية مطرزة ستايل دبي بقماش ندى فاخر.</p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-800 text-xs text-zinc-400">
+          <span>تشكيلة السهرة</span>
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition"></i>
+        </div>
+      </a>
+
+      <!-- صنف: أكسسوارات -->
+      <a href="catalog.html?cat=أكسسوارات" class="ecom-card group p-5 flex flex-col justify-between min-h-[190px]">
+        <div>
+          <span class="text-xs text-zinc-500 font-bold">04 //</span>
+          <h3 class="text-lg sm:text-xl font-bold text-white mt-1 group-hover:text-amber-400 transition font-heading">أكسسوارات</h3>
+          <p class="text-xs text-zinc-400 mt-1.5 leading-relaxed">حقائب يد جلدية فاخرة وأكسسوارات راقية تكمل طلتكِ.</p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-800 text-xs text-zinc-400">
+          <span>الأكثر طلباً 🔥</span>
+          <i data-lucide="arrow-left" class="w-4 h-4 text-amber-400 group-hover:-translate-x-1 transition"></i>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 6. شبكة المنتوجات الأكثر طلباً (8 منتوجات بأطر الصور المحفوظة والدارجة الكاملة) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-zinc-800">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+      <div>
+        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">سلعة حصرية</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-white mt-1 font-heading">الأكثر طلباً هذا الأسبوع 🔥</h2>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-xs text-zinc-400">المخزون متوفر حالياً للتوصيل الفوري</span>
+      </div>
+    </div>
+
+    <!-- حاوية المنتوجات تولد تلقائياً عبر JavaScript -->
+    <div id="featured-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- يتم حقن المنتوجات هنا عبر renderFeaturedProducts() -->
+    </div>
+  </section>
+
+  <!-- 7. لافتة تخفيض خاص بالدارجة -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="rounded-2xl bg-gradient-to-r from-amber-500/20 via-zinc-900 to-zinc-900 border border-amber-500/30 p-8 sm:p-10 relative overflow-hidden">
+      <div class="max-w-2xl space-y-4">
+        <span class="badge-tag badge-trend">تخفيض خاص // كمية محدودة في الستوك</span>
+        <h3 class="text-2xl sm:text-3xl font-black text-white font-heading">
+          كوموندي قطعتين ودايماً التوصيل باطل ابتداءً من 12,000 دج 🚚
+        </h3>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+          جميع الموديلات مفصلة بمقاسات جزائرية حقيقية ومجربة. اختاري لاطاي تاعك وإذا ما جاتكش نبدلوهالك بكل سهولة وبدون أي تعقيد.
+        </p>
+        <div class="pt-2 flex flex-wrap gap-4">
+          <a href="catalog.html" class="btn-primary">
+            <span>تصفحي الكاتالوج دروك</span>
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </a>
+          <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="btn-whatsapp py-2.5 px-4 rounded-lg text-xs font-bold">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>تواصل مع البوتيك في الواتساب</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. الفوتر بالدارجة الجزائرية 100% -->
+  <footer class="bg-[#0c0c0e] border-t border-zinc-800 text-zinc-400 mt-auto pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- معلومات المتجر -->
+      <div class="space-y-3 md:col-span-1">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center text-black font-bold">
+            <i data-lucide="sparkles" class="w-4 h-4 text-black"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white" data-store-name>ماي مون جيجل</span>
+        </div>
+        <p class="text-xs text-zinc-400 leading-relaxed" data-store-tagline>
+          أرقى الملابس النسائية العصرية في الجزائر. جودة عالية، فينيسيون متقونة، وتوصيل سريع وموثوق لـ 58 ولاية.
+        </p>
+        <div class="pt-2">
+          <a href="https://wa.me/213656481332" target="_blank" data-whatsapp-link class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>خدمة الزبائن عبر واتساب 7/7</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- أقسام المتجر -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold text-white uppercase tracking-wider">أقسام السلعة</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="catalog.html?cat=فساتين" class="hover:text-amber-400 transition">فساتين (سهرة وشيفون)</a></li>
+          <li><a href="catalog.html?cat=أطقم شابة" class="hover:text-amber-400 transition">أطقم شابة قطعتين</a></li>
+          <li><a href="catalog.html?cat=عبايات حطة" class="hover:text-amber-400 transition">عبايات حطة ستايل دبي</a></li>
+          <li><a href="catalog.html?cat=أكسسوارات" class="hover:text-amber-400 transition">حقائب وأكسسوارات</a></li>
+        </ul>
+      </div>
+
+      <!-- خدمة الزبائن والتوصيل -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold text-white uppercase tracking-wider">خدمة الزبائن</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="locations.html" class="hover:text-amber-400 transition">دليل التوصيل لـ 58 ولاية</a></li>
+          <li><a href="order-tracking.html" class="hover:text-amber-400 transition">تتبع طلبيتكِ (لاكوموند)</a></li>
+          <li><a href="terms.html" class="hover:text-amber-400 transition">شروط التبديل والدفع عند الاستلام</a></li>
+          <li><a href="privacy.html" class="hover:text-amber-400 transition">سياسة الخصوصية وحماية البيانات</a></li>
+        </ul>
+      </div>
+
+      <!-- عنوان المحل والتواصل -->
+      <div class="space-y-3 text-xs">
+        <h4 class="text-xs font-bold text-white uppercase tracking-wider">عنوان المحل والتواصل</h4>
+        <p class="flex items-start gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+          <span data-store-address>وسط المدينة، جيجل (قرب ساحة الشهداء)، الجزائر</span>
+        </p>
+        <p class="flex items-center gap-2">
+          <i data-lucide="phone" class="w-4 h-4 text-amber-400 shrink-0"></i>
+          <a href="tel:0656481332" dir="ltr" data-store-phone class="hover:text-white font-mono">0656 481 332</a>
+        </p>
+        <p class="flex items-center gap-2">
+          <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0"></i>
+          <span data-store-hours>السبت - الخميس: 9:30 ص إلى 8:30 م</span>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-zinc-800/80 mt-10 pt-5 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+      <div>
+        © 2026 <span data-store-name>ماي مون جيجل</span>. جميع الحقوق محفوظة.
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span>التوصيل لـ 58 ولاية 🚚</span>
+        <span>•</span>
+        <span>الدفع عند الاستلام 💵</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 9. نافذة طلب واتساب السريع (MODAL) بالدارجة الجزائرية 100% -->
+  <div id="quick-order-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+    <div id="quick-order-modal-content" class="w-full max-w-lg rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- زر الإغلاق -->
+      <button onclick="closeQuickOrderModal()" class="absolute top-4 left-4 p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-right mb-5">
+        <span class="badge-tag badge-trend mb-2">طلب سريع عبر واتساب ⚡</span>
+        <h3 class="text-xl font-bold text-white font-heading">عمّري معلوماتك لتأكيد الطلب</h3>
+        <p class="text-xs text-zinc-400 mt-1">كي تضغطي على الزر نفتحولك الواتساب مباشرة مع ميساج واجد فيه كل التفاصيل.</p>
+      </div>
+
+      <!-- ملخص المنتوج المختار -->
+      <div class="p-3 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center gap-3 mb-5">
+        <div id="modal-img-container" class="w-16 h-16 rounded-lg bg-zinc-800 shrink-0 overflow-hidden">
+          <!-- مكان الصورة في المودال -->
+        </div>
+        <div class="text-right flex-1">
+          <span id="modal-prod-cat" class="text-[10px] text-amber-400 font-bold block">فساتين</span>
+          <h4 id="modal-prod-title" class="text-xs sm:text-sm font-bold text-white line-clamp-1">اسم المنتوج</h4>
+          <span id="modal-prod-price" class="text-amber-400 font-black text-sm block mt-0.5">0 دج</span>
+        </div>
+      </div>
+
+      <!-- استمارة الطلب بالدارجة الجزائرية -->
+      <form onsubmit="submitQuickOrder(event)" class="space-y-4 text-right">
+        
+        <div>
+          <label class="block text-xs font-bold text-zinc-300 mb-1.5">الاسم واللقب *</label>
+          <input type="text" id="qo-name" required placeholder="مثال: مريم بن أحمد" class="w-full text-xs">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-zinc-300 mb-1.5">رقم التليفون *</label>
+          <input type="tel" id="qo-phone" required placeholder="05XX XX XX XX" dir="ltr" class="w-full text-xs text-right">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-zinc-300 mb-1.5">اختر الولاية (58 ولاية) *</label>
+            <select id="qo-wilaya" required class="w-full text-xs">
+              <!-- يتم ملؤها عبر JavaScript -->
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-zinc-300 mb-1.5">لاطاي (المقاس) *</label>
+            <select id="qo-size" class="w-full text-xs">
+              <option value="S">S (صغير)</option>
+              <option value="M" selected>M (متوسط)</option>
+              <option value="L">L (كبير)</option>
+              <option value="XL">XL (كبير جداً)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-zinc-300 mb-1.5">اللون المفضل</label>
+            <input type="text" id="qo-color" placeholder="مثال: أسود / بيج" class="w-full text-xs">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-zinc-300 mb-1.5">البلدية أو العنوان</label>
+            <input type="text" id="qo-address" placeholder="اسم البلدية أو الحي" class="w-full text-xs">
+          </div>
+        </div>
+
+        <div class="p-3 bg-zinc-900/60 border border-zinc-800 rounded-xl text-xs text-zinc-400 space-y-1">
+          <div class="flex justify-between">
+            <span>طريقة الدفع:</span>
+            <strong class="text-white">الدفع عند الاستلام (كي توصلك السلعة)</strong>
+          </div>
+          <div class="flex justify-between">
+            <span>التوصيل:</span>
+            <strong class="text-amber-400">متوفر حتى لباب الدار</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-whatsapp w-full py-3 px-4 rounded-xl text-sm font-bold shadow-lg">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>أكد لاكوموند في الواتساب ⚡</span>
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 10. سلة المشتريات المنبثقة (Cart Drawer) بالدارجة -->
+  <div id="cart-drawer-overlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="cart-drawer" class="fixed top-0 left-0 bottom-0 w-full max-w-md bg-[#121215] border-r border-zinc-800 z-50 -translate-x-full transition-transform duration-200 flex flex-col shadow-2xl">
+    
+    <!-- رأس السلة -->
+    <div class="p-5 border-b border-zinc-800 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-amber-400"></i>
+        <h3 class="font-bold text-white text-base font-heading">سلة المشتريات</h3>
+      </div>
+      <button onclick="toggleCartDrawer()" class="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- قائمة عناصر السلة -->
+    <div id="cart-drawer-items" class="flex-1 overflow-y-auto p-5 space-y-3">
+      <!-- يتم حقن عناصر السلة عبر JavaScript -->
+    </div>
+
+    <!-- أسفل السلة ومجموع الحساب -->
+    <div class="p-5 border-t border-zinc-800 space-y-4 bg-zinc-950">
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-zinc-400">المجموع الفرعي:</span>
+        <span id="cart-drawer-subtotal" class="font-bold text-white text-base">0 دج</span>
+      </div>
+      <div class="text-[11px] text-zinc-400 text-right bg-zinc-900 p-2.5 rounded-lg border border-zinc-800">
+        🚚 التوصيل باطل للطلبيات ابتداءً من <strong>12,000 دج</strong>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <a href="cart.html" class="btn-secondary py-2.5 text-xs text-center font-bold">
+          عرض السلة
+        </a>
+        <a href="checkout.html" class="btn-primary py-2.5 text-xs text-center font-bold">
+          إتمام الطلب ⚡
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ملف الإعدادات المركزي الخفيف والوحيد للموقع -->
+  <script src="store-config.js"></script>
+
+  <script>
+    lucide.createIcons();
+
+    // ملء قائمة الولايات في استمارة الطلب السريع (1 Adrar إلى 58 In Guezzam)
+    function populateQuickOrderWilayas() {
+      const select = document.getElementById('qo-wilaya');
+      if (!select || typeof SHIPPING_ZONES === 'undefined') return;
+
+      select.innerHTML = SHIPPING_ZONES.map(z => `
+        <option value="${z.name}" ${z.code === 'DZ-18' ? 'selected' : ''}>
+          ${z.name} (توصيل: ${z.homePrice} دج)
+        </option>
+      `).join('');
+    }
+
+    // عرض شبكة المنتوجات الأكثر طلباً (مع أطر الصور المحفوظة والدارجة الكاملة)
+    function renderFeaturedProducts() {
+      const grid = document.getElementById('featured-products-grid');
+      if (!grid || typeof PRODUCTS_DATA === 'undefined') return;
+
+      grid.innerHTML = PRODUCTS_DATA.slice(0, 8).map(prod => {
+        const priceDisplay = prod.salePrice
+          ? `<span class="text-amber-400 font-bold text-base">${prod.salePrice.toLocaleString()} ${STORE_CONFIG.currency}</span> <span class="text-xs text-zinc-500 line-through">${prod.basePrice.toLocaleString()} ${STORE_CONFIG.currency}</span>`
+          : `<span class="text-white font-bold text-base">${prod.basePrice.toLocaleString()} ${STORE_CONFIG.currency}</span>`;
+
+        return `
+          <div class="ecom-card group flex flex-col justify-between">
+            
+            <!-- إطار الصورة (محفوظ الأبعاد والحواف الدائرية بدقة) -->
+            <div class="relative overflow-hidden aspect-[4/5] bg-zinc-900 border-b border-zinc-800">
+              <a href="product.html?id=${prod.id}" class="block w-full h-full">
+                ${renderProductImage(prod.image, prod.name)}
+              </a>
+              <div class="absolute top-2.5 right-2.5 z-10">
+                <span class="badge-tag badge-trend">${prod.badge || 'جديد الحطة ✨'}</span>
+              </div>
+            </div>
+
+            <!-- بيانات المنتوج -->
+            <div class="p-4 flex-1 flex flex-col justify-between space-y-3 text-right">
+              <div>
+                <span class="text-[11px] text-amber-400 font-bold block">${prod.category}</span>
+                <h3 class="text-sm font-bold text-white group-hover:text-amber-400 transition leading-snug mt-1 line-clamp-2">
+                  <a href="product.html?id=${prod.id}">${prod.name}</a>
+                </h3>
+              </div>
+
+              <div class="pt-3 border-t border-zinc-800/80">
+                <div class="mb-3">${priceDisplay}</div>
+
+                <div class="grid grid-cols-2 gap-2">
+                  <button onclick="triggerQuickOrder('${prod.id}')" class="btn-whatsapp py-2 px-2 rounded-lg text-xs font-bold">
+                    <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                    <span>كوموندي دروك ⚡</span>
+                  </button>
+                  <a href="product.html?id=${prod.id}" class="btn-secondary py-2 px-2 rounded-lg text-xs font-bold text-center">
+                    <span>شوف التفاصيل</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    // إدارة طلب الواتساب السريع (Quick Order Modal)
+    let currentSelectedProductForQuickOrder = null;
+
+    function triggerQuickOrder(productId) {
+      const prod = PRODUCTS_DATA.find(p => p.id === productId);
+      if (!prod) return;
+
+      currentSelectedProductForQuickOrder = prod;
+
+      // إطار صورة المنتوج في المودال
+      const imgContainer = document.getElementById('modal-img-container');
+      if (imgContainer) {
+        imgContainer.innerHTML = renderProductImage(prod.image, prod.name);
+      }
+
+      document.getElementById('modal-prod-title').textContent = prod.name;
+      document.getElementById('modal-prod-cat').textContent = prod.category;
+      document.getElementById('modal-prod-price').textContent = `${(prod.salePrice || prod.basePrice).toLocaleString()} ${STORE_CONFIG.currency}`;
+
+      // ملء خيارات المقاس المتاحة
+      const sizeSelect = document.getElementById('qo-size');
+      if (sizeSelect && prod.sizes) {
+        sizeSelect.innerHTML = prod.sizes.map(s => `<option value="${s}">${s}</option>`).join('');
+      }
+
+      document.getElementById('quick-order-modal').classList.remove('hidden');
+    }
+
+    function openQuickOrderForFirstProduct() {
+      if (PRODUCTS_DATA.length > 0) {
+        triggerQuickOrder(PRODUCTS_DATA[0].id);
+      }
+    }
+
+    function closeQuickOrderModal() {
+      document.getElementById('quick-order-modal').classList.add('hidden');
+    }
+
+    function submitQuickOrder(e) {
+      e.preventDefault();
+      if (!currentSelectedProductForQuickOrder) return;
+
+      const name = document.getElementById('qo-name').value;
+      const phone = document.getElementById('qo-phone').value;
+      const wilaya = document.getElementById('qo-wilaya').value;
+      const size = document.getElementById('qo-size').value;
+      const color = document.getElementById('qo-color').value;
+      const address = document.getElementById('qo-address').value;
+
+      const price = currentSelectedProductForQuickOrder.salePrice || currentSelectedProductForQuickOrder.basePrice;
+
+      const whatsappUrl = STORE_CONFIG.buildProductOrderWhatsAppUrl({
+        productName: currentSelectedProductForQuickOrder.name,
+        productPrice: price.toLocaleString(),
+        size: size,
+        color: color,
+        customerName: name,
+        customerPhone: phone,
+        wilaya: wilaya,
+        address: address
+      });
+
+      closeQuickOrderModal();
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // إدارة درج السلة (Cart Drawer)
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('cart-drawer-overlay');
+      const isOpen = !drawer.classList.contains('-translate-x-full');
+
+      if (isOpen) {
+        drawer.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+      } else {
+        renderCartDrawer();
+        drawer.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+      }
+    }
+
+    function renderCartDrawer() {
+      const container = document.getElementById('cart-drawer-items');
+      const subtotalEl = document.getElementById('cart-drawer-subtotal');
+      if (!container || !window.cartEngine) return;
+
+      const cart = window.cartEngine.getCart();
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-zinc-500 space-y-3">
+            <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto stroke-1 text-zinc-600"></i>
+            <p class="text-sm font-arabic font-bold text-zinc-400">سلتك راهي فارغة حالياً</p>
+            <a href="catalog.html" onclick="toggleCartDrawer()" class="btn-primary py-2 px-4 text-xs font-bold inline-block mt-2">
+              تصفحي السلعة 🛍️
+            </a>
+          </div>
+        `;
+        subtotalEl.textContent = `0 ${STORE_CONFIG.currency}`;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = cart.map((item, index) => `
+        <div class="p-3 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center gap-3 text-right">
+          <div class="w-14 h-14 rounded-lg bg-zinc-800 shrink-0 overflow-hidden">
+            ${renderProductImage(item.image, item.name)}
+          </div>
+          <div class="flex-1 min-w-0">
+            <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
+            <div class="text-[11px] text-zinc-400 mt-0.5">
+              <span>المقاس: ${item.size}</span> • <span class="text-amber-400 font-bold">${item.price.toLocaleString()} ${STORE_CONFIG.currency}</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <button onclick="updateCartItemQty(${index}, ${item.quantity - 1})" class="w-5 h-5 rounded bg-zinc-800 text-zinc-300 flex items-center justify-center text-xs">-</button>
+              <span class="text-xs font-bold text-white">${item.quantity}</span>
+              <button onclick="updateCartItemQty(${index}, ${item.quantity + 1})" class="w-5 h-5 rounded bg-zinc-800 text-zinc-300 flex items-center justify-center text-xs">+</button>
+              <button onclick="removeCartItem(${index})" class="text-[10px] text-red-400 mr-auto hover:underline">حذف</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      subtotalEl.textContent = `${window.cartEngine.getSubtotal().toLocaleString()} ${STORE_CONFIG.currency}`;
+      lucide.createIcons();
+    }
+
+    function updateCartItemQty(index, qty) {
+      window.cartEngine.updateQuantity(index, qty);
+      renderCartDrawer();
+    }
+
+    function removeCartItem(index) {
+      window.cartEngine.removeFromCart(index);
+      renderCartDrawer();
+    }
+
+    // تبديل قائمة الهاتف
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // التهيئة عند التحميل
+    document.addEventListener('DOMContentLoaded', () => {
+      populateQuickOrderWilayas();
+      renderFeaturedProducts();
+    });
+  </script>
+
+</body>
+</html>
